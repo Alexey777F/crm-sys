@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+  <title>Почта</title>
+  {% endblock %}
+{% block main %}
+  <div class="email-list">
+  {% for email in emails %}
+  <div class="email-item">
+    <div class="email-sender">{{ email.sender }}</div>
+    <div class="email-subject">{{ email.subject }}</div>
+    <div class="email-body">{{ email.body }}</div>
+  </div>
+  {% endfor %}
+  </div>
+{% endblock %}

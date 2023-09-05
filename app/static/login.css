@@ -1,0 +1,70 @@
+body {
+    background-image: url("crm1.jpg");
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    background-color: rgba(211, 211, 211, 0.6);
+    border: 20px solid rgba(173, 216, 230, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: black;
+    background-color: rgba(211, 211, 211, 0.1);
+    margin-top: 0px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="password"] {
+    border: 5px solid darkgray;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-left: -5px;
+}
+
+button {
+    background-color: rgba(173, 216, 230, 0.9);
+    border: none;
+    border-radius: 50px;
+    color: black;
+    padding: 10px 60px;
+}
+
+.flash-message-before-login {
+  background-color: #DC143C;
+  border-radius: 30px;
+  color: white;
+  padding: 5px 60px;
+  margin-bottom: 10px;
+}
+
+.flash-message-after-login {
+  background-color: #DC143C;
+  border-radius: 30px;
+  color: white;
+  padding: 5px 60px;
+  margin-bottom: 10px;
+}

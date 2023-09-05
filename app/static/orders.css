@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.header {
+  background-color: #20B2AA;
+  padding: 10px;
+}
+.header button {
+  background-color: #2E8B57;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.container {
+  margin-top: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
