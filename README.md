@@ -48,4 +48,7 @@
   ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm6.png)
   ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm7.png)
   ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm8.png)
-  
+
+## Контейнеры в Docker Desktop - Containers in Docker Desktop
+  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm9.png)
+
