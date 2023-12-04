@@ -60,7 +60,44 @@
           </a>
         </li><!-- End Search Icon-->
 
-        {% block bell_profile %}
+        {% block profile %}
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="static/assets/img/{{ username }}.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{short_name}}</span>
+          </a><!-- End Profile Image Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>{{manager_name}}</h6>
+              <span>{{working_position}}</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{{url_for('profile')}}">
+                <i class="bi bi-person"></i>
+                <span>Мой профиль</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="{{url_for('logout')}}">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Выйти</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
         {% endblock %}
       </ul>
     </nav><!-- End Icons Navigation -->
@@ -97,21 +134,6 @@
         </ul>
       </li><!-- End Tables Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed"  href="#">
-          <i class="bi bi-chat-left-dots"></i><span>Почта</span><i></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        </ul>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="icons-bootstrap.html">
-          <i class="bi bi-bar-chart"></i><span>Отчёт</span><i></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        </ul>
-      </li><!-- End Icons Nav -->
 
       <li class="nav-heading">Аккаунт</li>
       <li class="nav-item">
@@ -147,6 +169,7 @@
   <script src="{{url_for('static',filename='assets/vendor/quill/quill.min.js')}}"></script>
   <script src="{{url_for('static',filename='assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
   <script src="{{url_for('static',filename='assets/vendor/tinymce/tinymce.min.js')}}"></script>
+
 
   <!-- Template Main JS File -->
   <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>

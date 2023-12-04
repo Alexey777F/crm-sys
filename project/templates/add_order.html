@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}
+   <title>Добавить заказ</title>
+{% endblock %}
+
+{% block main %}
+<main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Добавить заказ</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{url_for('main')}}">Главная</a></li>
+          <li class="breadcrumb-item"><a href="{{url_for('orders')}}">Заказы</a></li>
+          <li class="breadcrumb-item active">Добавить заказ</li>
+        </ol>
+
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Заполните все поля</h5>
+              <!-- Horizontal Form -->
+              <form class="client-order" method="POST">
+                <div class="row mb-3">
+                  <label for="customer" class="col-sm-2 col-form-label">Ф.И.О</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="customer" name="customer">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="phone_number" class="col-sm-2 col-form-label">Телефон</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="phone_number" name="phone_number">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="email" class="col-sm-2 col-form-label">Почта</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="email" name="email">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="description" class="col-sm-2 col-form-label">Описание</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="description" name="description">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="income" class="col-sm-2 col-form-label">Прибыль</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="income" name="income">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="status" class="col-sm-2 col-form-label" >Статус</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="status" name="status">
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Отправить</button>
+                  <button type="reset" class="btn btn-secondary">Сбросить</button>
+                </div>
+              </form><!-- End Horizontal Form -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+{% endblock %}

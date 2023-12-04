@@ -1,4 +1,7 @@
-FROM python:3.8.13-bullseye
+FROM python:3.9.18-bullseye
+
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE 1
 
 RUN apt-get update && apt-get install -y \
     gcc \
@@ -6,10 +9,10 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+WORKDIR /project
 
-COPY . /app
+COPY . /project
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["python3", "main.py"]
+CMD ["python3", "views.py"]

@@ -1,14 +1,18 @@
+from typing import Callable
 from flask import render_template, request, redirect, flash, url_for, session
 from forms import LoginForm, ClientOrder
 from functools import wraps
 from werkzeug.security import check_password_hash
 from models import Managers, Orders, Clients, Combined
-from config import create_app
 import datetime
+from my_app import CreateApp
 
-app, db = create_app()
+create_app = CreateApp()
+app = create_app.return_app()
 
-def set_manager_session(func):
+
+def set_manager_session(func: Callable) -> Callable:
+    """Декоратор, который проверяет клиента в сессии и добавляет данные в шаблон"""
     @wraps(func)
     def wrapper(*args, **kwargs):
         session.permanent = True
@@ -27,13 +31,15 @@ def set_manager_session(func):
 
 @app.route('/')
 def index():
-    return redirect(url_for('login'), 301)
+    """Роутер / который редиректит на login"""
+    return redirect(url_for('login'), 302)
 
 
-@app.route("/login", methods=["POST", "GET"])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
+    """Роутер /login, который рендерит страницу login.html и при успешной проверке - редиректит на функцию main"""
     form = LoginForm(request.form)
-    if request.method == "POST" and form.validate():
+    if request.method == 'POST' and form.validate():
         username = request.form['username']
         password = request.form['password']
         # Проверяем наличие пользователя в базе данных
@@ -54,14 +60,17 @@ def login():
 @app.route('/main', methods=["POST", "GET"])
 @set_manager_session
 def main(username, manager_name, working_position, short_name):
+    """Роутер /main, который возвращает страницу main.html"""
     orders_by_manager = Combined.get_orders_by_manager(username)
     return render_template("main.html", username=username, manager_name=manager_name,
-                           working_position=working_position, short_name=short_name, orders_by_manager=orders_by_manager)
+                           working_position=working_position, short_name=short_name,
+                           orders_by_manager=orders_by_manager)
 
 
 @app.route('/add_order', methods=["POST", "GET"])
 @set_manager_session
 def add_order(username, manager_name, working_position, short_name):
+    """Роутер /add_order, который берет данные из формы и добавляет их в бд"""
     form = ClientOrder(request.form)
     if request.method == "POST" and form.validate():
         customer = request.form['customer']
@@ -74,13 +83,10 @@ def add_order(username, manager_name, working_position, short_name):
         manager_id = Managers.get_manager_id(username)
         client_id = Clients.get_client_id()
         order_id = Orders.get_order_id()
-        # Add client to database
         Clients.add_client(customer, phone_number, email)
-        # Add order to database
         Orders.add_order_by_manager(customer, description, income, status, dates, manager_id, client_id)
         Combined.add_combined(manager_id, order_id)
         return redirect(url_for('orders'))
-
     return render_template("add_order.html", username=username, manager_name=manager_name,
                            working_position=working_position, short_name=short_name, form=form)
 
@@ -88,6 +94,7 @@ def add_order(username, manager_name, working_position, short_name):
 @app.route('/orders', methods=["POST", "GET"])
 @set_manager_session
 def orders(username, manager_name, working_position, short_name):
+    """Роутер /orders который отображает страницу orders.html и отображает таблицу с заказами из таблицы Orders"""
     manager_id = Managers.get_manager_id(username)
     order = Orders.get_order_by_manager(manager_id)
     return render_template("orders.html", username=username, manager_name=manager_name,
@@ -97,6 +104,7 @@ def orders(username, manager_name, working_position, short_name):
 @app.route('/clients', methods=["POST", "GET"])
 @set_manager_session
 def clients(username, manager_name, working_position, short_name):
+    """Роутер /clients который отображает страницу clients.html и отображает таблицу с клиентами из таблицы Clients"""
     client = Clients.get_all_clients()
     return render_template("clients.html", username=username, manager_name=manager_name,
                            working_position=working_position, short_name=short_name, client=client)
@@ -105,6 +113,7 @@ def clients(username, manager_name, working_position, short_name):
 @app.route('/profile', methods=["POST", "GET"])
 @set_manager_session
 def profile(username, manager_name, working_position, short_name):
+    """Роутер /profile который отображает страницу profile.html и отображает данные из таблицы Managers"""
     manager_info = Managers.get_manager_info(username)
     return render_template("profile.html", username=username, manager_name=manager_name,
                            working_position=working_position, short_name=short_name, manager_info=manager_info)
@@ -112,40 +121,10 @@ def profile(username, manager_name, working_position, short_name):
 
 @app.route('/logout')
 def logout():
+    """Роутер /logout который завершает сессию и редиректит на страницу входа и прохождения авторизации"""
     session.clear()
     return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5140, debug=True)
-
-
-# import smtplib
-# from email.mime.text import MIMEText
-#
-#
-# def send_mail():
-#     sender = "fominb2bservice@gmail.com"
-#     recipient = 'почта клиента'
-#     password = "fnptltgbofcfqjcw"
-#     server = smtplib.SMTP("smtp.gmail.com", 587)
-#     server.starttls()
-#     try:
-#         with open("templates/main.html") as file:
-#             report = file.read()
-#     except IOError:
-#         return "Файл отчет не найден"
-#     try:
-#         server.login(sender, password)
-#         msg = MIMEText(report, "html")
-#         msg["FROM"] = sender
-#         msg["To"] = recipient
-#         msg["SUBJECT"] = "Посмотри меня!"
-#         server.sendmail(sender, recipient, msg.as_string())
-#         return "Успешно"
-#     except Exception as ex:
-#         return f"{ex} Проверь логин и пароль"
-#
-#
-# if __name__ == "__main__":
-#     send_mail()

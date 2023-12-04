@@ -9,8 +9,8 @@ CREATE TABLE managers (
   email VARCHAR(50)
 );
 
-INSERT INTO managers (username, password, full_name, working_position, city, phone_number, email) VALUES ('Alexey', 'pbkdf2:sha256:600000$d2b10DM9WleyyqZN$08e02efa33d5b8c77c0c289d24b7bede053de115df782310b4961ab4dd8128d0', 'Фомин Алексей Геннадьевич', 'Разработчик', 'Москва', '89931234598', 'fff777@mail.ru');
-INSERT INTO managers (username, password, full_name, working_position, city, phone_number, email) VALUES ('Daria', 'pbkdf2:sha256:600000$d2b10DM9WleyyqZN$08e02efa33d5b8c77c0c289d24b7bede053de115df782310b4961ab4dd8128d0', 'Каланча Дарья Викторовна', 'Руководитель', 'Москва', '89931232256', 'ddd777@mail.com');
+INSERT INTO managers (username, password, full_name, working_position, city, phone_number, email) VALUES ('Alexey', 'pbkdf2:sha256:600000$d2b10DM9WleyyqZN$08e02efa33d5b8c77c0c289d24b7bede053de115df782310b4961ab4dd8128d0', 'Фомин Алексей Геннадьевич', 'Разработчик', 'Москва', '89931234598', 'example_email');
+INSERT INTO managers (username, password, full_name, working_position, city, phone_number, email) VALUES ('Vasya', 'pbkdf2:sha256:600000$d2b10DM9WleyyqZN$08e02efa33d5b8c77c0c289d24b7bede053de115df782310b4961ab4dd8128d0', 'Витрюков Василий Петрович', 'Менеджер', 'Москва', '89931232256', 'ddd777@mail.com');
 
 
 CREATE TABLE clients (

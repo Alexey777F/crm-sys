@@ -34,7 +34,7 @@ services:
       - "-c"
       - "pg_stat_statements.track=all"
     environment:
-      PG_DB_HOST: "postgres"
+      PG_DB_HOST: 'postgres'
       POSTGRES_DB: "database"
       POSTGRES_USER: "user"
       POSTGRES_PASSWORD: "password"
@@ -67,35 +67,20 @@ services:
     networks:
          - postgres
 
-#  pgadmin:
-#      container_name: pgadmin_container
-#      image: dpage/pgadmin4:7.2
-#      environment:
-#          PGADMIN_DEFAULT_EMAIL: "pguser@gmail.com"
-#          PGADMIN_DEFAULT_PASSWORD: "pgadminpwd4hr"
-#          PGADMIN_CONFIG_SERVER_MODE: "False"
-#      volumes:
-#          - pgadmin-data:/var/lib/pgadmin
-#      ports:
-#          - "5050:80"
-#      restart: always
-#      networks:
-#           - postgres
-
   app:
       container_name: app_container
       build:
-        context: ./app
+        context: ./project
       volumes:
-        - ./app:/app
+        - ./project:/app
       environment:
-        SECRET_KEY: b'\xfb\xa0\xdfW"\x1e\xe6\xf0\xfb\xeb\xa7\xde\x8fa\x1d1'
+        SECRET_KEY: 'Your_app_secret_key'
         POSTGRES_USER: "user"
         POSTGRES_PASSWORD: "password"
         PG_DB_HOST: "postgres"
         PG_DB_NAME: "database"
-      expose:
-        - 5140
+        EMAIL_SENDER: "your_email_sender"
+        EMAIL_PASS: "your_email_pass"
       ports:
         - "5140:5140"
       depends_on:
@@ -105,12 +90,8 @@ services:
         - postgres
 
 
-
 volumes:
     db-data:
-#    pgadmin-data:
-    redis-data:
-    web-data:
 
 networks:
     postgres:
