@@ -20,8 +20,6 @@
  * Необходимо скопировать все содержимое репозитория в отдельный каталог.
  * Установите виртульное окружение на вашей ОС, на Mac OS python3 -m venv my_env
  * Активируйте виртульаное окружение на вашей ОС, на Mac OS source my_env/bin/activate
- * Установить все библиотеки из requirements.txt 
- * Важно! Установить именно те версии которые указаны в requirements.txt иначе возможны ошибки при работе бота.
  * Откройте файл docker-compose.yml и заполните необходимыми данными(секретный ключ, хост, порт и настройки базы данных).
  * Запустите сборку образа и создания контейнера с помощью команды: docker-compose up --build
  * Приложение запущено в контейнере app_container 
@@ -30,8 +28,6 @@
  * It is necessary to copy all important repositories to a separate directory.
  * Install a virtual environment on your OS, on Mac OS python3 -m venv my_env
  * Activate the virtual environment in your OS, in the Mac OS source my_env/bin/activate.
- * Install all libraries from the requirements.txt file.
- * Important! Install exactly the version specified in the require.txt file, otherwise errors may occur when the bot operates.
  * Open the docker-compose.yml file and fill in the necessary data (secret key, host, port and database settings).
  * Start building the image and creating the container using the command: docker-compose up --build
  * The application is running in the app_container container
