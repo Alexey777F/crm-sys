@@ -1,8 +1,12 @@
  # CRM-sys
  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm2.png)
  * Демо версия crm системы, обращаю Ваше внимание что доступен только урезанный функционал!
+ * Полная версия приложения позволяет отправлять отчёт на почту сотрудника.
+ * В полной версии есть функции добавления клиентов и расширенный отчёт по месяцам и за всё время.
  ___
  * Demo version of the CRM system, please note that only reduced functionality is available!
+ * The full version of the application allows you to send a report to an employee’s email.
+ * The full version has functions for adding clients and an extended report by month and for all time.
    
 ## Технологии - Technologies
  * Docker-compose
@@ -43,4 +47,4 @@
   ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm6.png)
   ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm7.png)
   ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm8.png)
- 
+  
