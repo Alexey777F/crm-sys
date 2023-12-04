@@ -20,7 +20,7 @@
  * email-validator(v. 2.0.0.post2)
  * aiosmtplib(v. 2.0.2)
  
-## Установка с помощью Docker-compose
+## Установка с помощью Docker-compose - Install with Docker-compose
  * Установите Docker Desktop под вашу ОС
  * Необходимо скопировать все содержимое репозитория в отдельный каталог.
  * Установите виртульное окружение на вашей ОС, на Mac OS python3 -m venv my_env
