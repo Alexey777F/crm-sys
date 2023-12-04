@@ -1,5 +1,5 @@
  # CRM-sys
- ![horoscope_bot](https://github.com/Alexey777F/Horoscope_bot/blob/master/6.png)
+ ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm2.png)
  * Демо версия crm системы, обращаю Ваше внимание что доступен только урезанный функционал!
  ___
  * Demo version of the CRM system, please note that only reduced functionality is available!
@@ -39,8 +39,12 @@
 ## Как работает - How does it works
   * Примеры работы приложения
   * Application examples
-  ![horoscope_bot](https://github.com/Alexey777F/Horoscope_bot/blob/master/1.png)
-  ![horoscope_bot](https://github.com/Alexey777F/Horoscope_bot/blob/master/2.png)
-  ![horoscope_bot](https://github.com/Alexey777F/Horoscope_bot/blob/master/3.png)
-  ![horoscope_bot](https://github.com/Alexey777F/Horoscope_bot/blob/master/4.png)
-  ![horoscope_bot](https://github.com/Alexey777F/Horoscope_bot/blob/master/5.png)
+  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm1.png)
+  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm2.png)
+  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm3.png)
+  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm4.png)
+  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm5.png)
+  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm6.png)
+  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm7.png)
+  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm8.png)
+ 
