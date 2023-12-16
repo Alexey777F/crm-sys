@@ -1,5 +1,5 @@
  # CRM-sys
- ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm2.png)
+ ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm2.png)
  * Демо версия crm системы, обращаю Ваше внимание что доступен только урезанный функционал!
  * Полная версия приложения позволяет отправлять отчёт на почту сотрудника.
  * В полной версии есть функции добавления клиентов и расширенный отчёт по месяцам и за всё время.
@@ -40,15 +40,15 @@
 ## Как работает - How does it works
   * Примеры работы приложения
   * Application examples
-  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm1.png)
-  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm2.png)
-  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm3.png)
-  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm4.png)
-  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm5.png)
-  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm6.png)
-  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm7.png)
-  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm8.png)
+  ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm1.png)
+  ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm2.png)
+  ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm3.png)
+  ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm4.png)
+  ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm5.png)
+  ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm6.png)
+  ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm7.png)
+  ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm8.png)
 
 ## Контейнеры в Docker Desktop - Containers in Docker Desktop
-  ![horoscope_bot](https://github.com/Alexey777F/crm-sys/blob/main/crm9.png)
+  ![CRM-sys](https://github.com/Alexey777F/crm-sys/blob/main/crm9.png)
 
