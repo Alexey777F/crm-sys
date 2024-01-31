@@ -17,8 +17,6 @@
  * Flask-SQLAlchemy(v. 3.0.4)
  * psycopg2(v. 2.9.3)
  * WTForms(v. 3.0.1)
- * email-validator(v. 2.0.0.post2)
- * aiosmtplib(v. 2.0.2)
  
 ## Установка с помощью Docker-compose - Install with Docker-compose
  * Установите Docker Desktop под вашу ОС
